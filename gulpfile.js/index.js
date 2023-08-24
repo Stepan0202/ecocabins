@@ -3,7 +3,7 @@ const {src, dest, series, parallel, watch} = require('gulp');
 const fileInclude = require('gulp-file-include');
 const gulpSass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
-const minify = require("gulp-babel-minify");
+const minify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const rename = require('gulp-rename');
 
@@ -12,11 +12,7 @@ const rename = require('gulp-rename');
 function minifyJS(){
     return src('./src/js/**/*.js')
     .pipe(concat("main.js"))
-    .pipe(minify({
-        mangle: {
-          keepClassName: true
-        }
-      }))
+    .pipe(minify())
       .pipe(rename({
         suffix: ".min"
       }))

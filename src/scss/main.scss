@@ -1,6 +1,33 @@
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss"; 
+@import "../../node_modules/bootstrap/scss/reboot"; 
 @import "./assets/fonts";
+@import "./assets/variables";
 body{
-    font-family: 'Urbanist', sans-serif;
-    background-color: rgb(106, 255, 0);
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Merriweather', serif
+}
+
+@import "components/header";
+.logo {
+
+}
+.menu {
+
+}
+.menu__container {
+
+}
+.menu__item {
+}
+.buttons {
+}
+.buttons__primary {
+}
+.btn {
+}
+.btn-primary {
 }
