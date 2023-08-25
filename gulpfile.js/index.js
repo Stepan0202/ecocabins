@@ -9,6 +9,7 @@ const rename = require('gulp-rename');
 
 
 
+
 function minifyJS(){
     return src('./src/js/**/*.js')
     .pipe(concat("main.js"))
@@ -36,18 +37,21 @@ function browserSyn(){
         }
     });
 }
+
 function browserReload(cb){
     browserSync.reload();
     cb();
 }
 
 function watchTask(){
+    watch('/src/img/**/*', series(processImg, browserReload)),
     watch('./src/**/*.html', series(htmlInclude, browserReload)),
     watch('./src/**/*.scss', series(scssCompiler, browserReload))
     watch('./src/js/**/*.js', series(minifyJS, browserReload));
 }
 
   exports.default = series(
+    processImg,
     htmlInclude,
     scssCompiler,
     minifyJS,
