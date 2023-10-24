@@ -1,23 +1,39 @@
+
 .header__container{
     display: flex;
+    align-items: center;
+    padding: 9px 0 11px;
+    gap: 40px;
 }
 .logo {
+    flex: 0 0 168px;
+    color: #fff;
     
 }
 .menu {
     display: flex;
+    justify-content: end;
+    flex: 1 1 80%;
+    color: #fff;
+    font-size: 12px;
 }
 .menu__container {
     display: flex;
-
+    align-items: center;
+    align-self: center;
+    max-height: fit-content;
+    gap: 40px;
 }
 .menu__item {
+    display: flex;
+    align-self: center;
+
 }
 .buttons {
 }
 .buttons__primary {
 }
-.btn {
-}
-.btn-primary {
+
+.button{
+
 }

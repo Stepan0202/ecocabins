@@ -1,0 +1,21 @@
+.btn-primary{
+    background-color: #FFFFFF;
+    color: #606B74;
+    border-color: #606B74;
+    &:hover{
+        background-color: #9e9e9e;
+        border-color: #9e9e9e;
+    }
+}
+$basic-font-size: 0.875rem; //14px
+$white: #FFF;
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       #222F33
+);

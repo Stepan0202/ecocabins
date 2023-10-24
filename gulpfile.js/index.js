@@ -6,9 +6,14 @@ const browserSync = require('browser-sync').create();
 const minify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
 
 
-
+function minifyImages(){
+    return src('./src/img/**/*')
+    .pipe(imagemin())
+    .pipe(dest('./dist/img/'))
+}
 
 function minifyJS(){
     return src('./src/js/**/*.js')
@@ -44,14 +49,14 @@ function browserReload(cb){
 }
 
 function watchTask(){
-    watch('/src/img/**/*', series(processImg, browserReload)),
+    watch('/src/img/**/*', series(minifyImages, browserReload)),
     watch('./src/**/*.html', series(htmlInclude, browserReload)),
     watch('./src/**/*.scss', series(scssCompiler, browserReload))
     watch('./src/js/**/*.js', series(minifyJS, browserReload));
 }
 
   exports.default = series(
-    processImg,
+    minifyImages,
     htmlInclude,
     scssCompiler,
     minifyJS,
